@@ -15,5 +15,4 @@ describe('main page', function() {
     assert.ok(this.browser.success);
     assert.equal(this.browser.text(), "Hello World");
   })
-
 });
