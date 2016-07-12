@@ -9,8 +9,8 @@ node {
             sh "git rev-parse --short HEAD > .git/commit-id"                        
             commit_id = readFile('.git/commit-id')
             sh 'curl -XPOST -H \
-              "Authorization: token $token" \
-              https://api.github.com/repos/EffectiveDevOpsWithAWS/helloworld/statuses/$commit_id -d "{ \
+              "Authorization: token ${token}" \
+              https://api.github.com/repos/EffectiveDevOpsWithAWS/helloworld/statuses/${commit_id} -d "{ \
                 \"state\": \"pending\", \
                 \"target_url\": \"https://example.com/build/status\", \
                 \"description\": \"The build pending tests!\", \
