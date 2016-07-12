@@ -5,11 +5,11 @@ node {
     try {
        stage 'Checkout'
             checkout scm
-            token="d5ecd46feb6a9049e0763db9c2a2d447e74cb9fb"
+            def token = "d5ecd46feb6a9049e0763db9c2a2d447e74cb9fb"
             sh('git rev-parse HEAD > GIT_COMMIT')
             git_commit=readFile('GIT_COMMIT')
             sh 'curl -XPOST -H \
-              "Authorization: token "$token \
+              "Authorization: token ${token}" \
               https://api.github.com/repos/EffectiveDevOpsWithAWS/helloworld/statuses/${commit_id} -d "{ \
                 \"state\": \"pending\", \
                 \"target_url\": \"https://example.com/build/status\", \
