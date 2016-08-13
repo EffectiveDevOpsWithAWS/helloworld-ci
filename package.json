@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
+    "eslint": "^3.0.1",
+    "eslint-config-google": "^0.6.0",
     "zombie": "4.2.1"
   }
 }
